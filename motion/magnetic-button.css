@@ -1,0 +1,15 @@
+/* Magnetic Button — isolated motion layer.
+   Scoped entirely to [data-motion-target~="magnetic-button"]. Delete this
+   file plus its <link> and the magnetic-button.js <script> tag in
+   index.html to restore the static page exactly, with zero visual change. */
+
+[data-motion-target~="magnetic-button"] {
+  will-change: transform;
+}
+
+[data-motion-target~="magnetic-button"] [data-motion-part="magnetic-button-label"] {
+  /* transform has no effect on plain inline boxes, so the label needs an
+     inline-block box to move independently of the button's own transform */
+  display: inline-block;
+  will-change: transform;
+}
