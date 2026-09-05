@@ -1,0 +1,37 @@
+/* Spotlight Hover — isolated motion layer.
+   Scoped entirely to [data-motion-target~="spotlight-hover"]. Delete this
+   file plus its <link> and the spotlight-hover.js <script> tag in
+   index.html to restore the static page exactly, with zero visual change. */
+
+[data-motion-target~="spotlight-hover"] {
+  /* containing block for the ::after overlay; no visual effect on its own */
+  position: relative;
+}
+
+[data-motion-target~="spotlight-hover"]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  background: radial-gradient(circle 260px at var(--spot-x, 50%) var(--spot-y, 50%), rgba(255, 255, 255, var(--spot-opacity, 0.08)), transparent 70%);
+}
+
+/* image cards read brighter against their photo background than the light
+   gray cards do, so they get the higher end of the opacity range */
+.showcase-card[data-motion-target~="spotlight-hover"]::after {
+  --spot-opacity: 0.16;
+}
+
+[data-motion-target~="spotlight-hover"].is-spotlight-active::after {
+  opacity: 1;
+  transition-duration: 180ms;
+}
+
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  [data-motion-target~="spotlight-hover"]::after {
+    display: none;
+  }
+}

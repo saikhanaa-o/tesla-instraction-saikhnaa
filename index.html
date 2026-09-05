@@ -10,7 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="motion/magnetic-button.css">
+  <link rel="stylesheet" href="motion/spotlight-hover.css">
   <script src="motion/magnetic-button.js" defer></script>
+  <script src="motion/spotlight-hover.js" defer></script>
 </head>
 <body>
   <header class="site-header" data-motion="site-header">
@@ -31,7 +33,7 @@
     </section>
 
     <section class="section" id="drive" data-section="fsd">
-      <div class="container split-feature card">
+      <div class="container split-feature card" data-motion-target="spotlight-hover">
         <div class="split-feature__content" data-motion="content">
           <div><h2 class="heading-3">Full Self-Driving (Supervised)</h2><p class="lead">Makes every drive easier. Subscribe for $99/mo.1</p></div>
           <dl class="metrics"><div><dt>7x</dt><dd>Fewer Collisions</dd></div><div><dt>13,534,294,722</dt><dd>Miles Driven</dd></div></dl>
@@ -44,9 +46,9 @@
     <section class="section carousel-section" id="vehicles" data-section="vehicles" data-motion="carousel">
       <div class="container carousel">
         <div class="carousel__track">
-          <article class="showcase-card"><img class="media-cover" src="assets/vehicle-model-yl.png" alt="Model Y L Premium"><div class="showcase-card__content"><div><p class="tagline">Long Wheelbase Midsize SUV</p><h2>Model Y L Premium</h2></div><div><p class="lead strong">Starting at $61,990</p><div class="actions"><a class="button button--blue" data-motion-target="magnetic-button" href="#order"><span data-motion-part="magnetic-button-label">Одоо захиалах</span></a><a class="button button--white" data-motion-target="magnetic-button" href="#details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div></div></div></article>
-          <article class="showcase-card"><img class="media-cover" src="assets/vehicle-model-3.png" alt="Model 3"><div class="showcase-card__content"><div><p class="tagline">Sport Sedan</p><h2>Model 3</h2></div><div><p class="lead strong">Lease From $419/mo</p><div class="actions"><a class="button button--blue" data-motion-target="magnetic-button" href="#order"><span data-motion-part="magnetic-button-label">Одоо захиалах</span></a><a class="button button--white" data-motion-target="magnetic-button" href="#details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div></div></div></article>
-          <article class="showcase-card"><img class="media-cover" src="assets/vehicle-model-y.png" alt="Model Y"><div class="showcase-card__content"><div><p class="tagline">Midsize SUV</p><h2>Model Y</h2></div><div><p class="lead strong">Lease From $499/mo</p><div class="actions"><a class="button button--blue" data-motion-target="magnetic-button" href="#order"><span data-motion-part="magnetic-button-label">Одоо захиалах</span></a><a class="button button--white" data-motion-target="magnetic-button" href="#details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div></div></div></article>
+          <article class="showcase-card" data-motion-target="spotlight-hover"><img class="media-cover" src="assets/vehicle-model-yl.png" alt="Model Y L Premium"><div class="showcase-card__content"><div><p class="tagline">Long Wheelbase Midsize SUV</p><h2>Model Y L Premium</h2></div><div><p class="lead strong">Starting at $61,990</p><div class="actions"><a class="button button--blue" data-motion-target="magnetic-button" href="#order"><span data-motion-part="magnetic-button-label">Одоо захиалах</span></a><a class="button button--white" data-motion-target="magnetic-button" href="#details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div></div></div></article>
+          <article class="showcase-card" data-motion-target="spotlight-hover"><img class="media-cover" src="assets/vehicle-model-3.png" alt="Model 3"><div class="showcase-card__content"><div><p class="tagline">Sport Sedan</p><h2>Model 3</h2></div><div><p class="lead strong">Lease From $419/mo</p><div class="actions"><a class="button button--blue" data-motion-target="magnetic-button" href="#order"><span data-motion-part="magnetic-button-label">Одоо захиалах</span></a><a class="button button--white" data-motion-target="magnetic-button" href="#details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div></div></div></article>
+          <article class="showcase-card" data-motion-target="spotlight-hover"><img class="media-cover" src="assets/vehicle-model-y.png" alt="Model Y"><div class="showcase-card__content"><div><p class="tagline">Midsize SUV</p><h2>Model Y</h2></div><div><p class="lead strong">Lease From $499/mo</p><div class="actions"><a class="button button--blue" data-motion-target="magnetic-button" href="#order"><span data-motion-part="magnetic-button-label">Одоо захиалах</span></a><a class="button button--white" data-motion-target="magnetic-button" href="#details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div></div></div></article>
         </div>
         <div class="carousel__controls" aria-hidden="true"><div class="dots"><i class="active"></i><i></i><i></i></div><div class="arrows"><span><img src="assets/arrow-back.svg" alt=""></span><span><img src="assets/arrow-forward.svg" alt=""></span></div></div>
       </div>
@@ -54,8 +56,8 @@
 
     <section class="section" id="discover" data-section="offers">
       <div class="container promo-grid">
-        <article class="promo-card card"><div class="promo-card__content"><div><h3>Current Offers</h3><p>Explore limited-time offers on Tesla vehicles.</p></div><a class="button button--white" data-motion-target="magnetic-button" href="#offers"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div><img src="assets/offers.png" alt="Tesla vehicle offer"></article>
-        <article class="promo-card card"><div class="promo-card__content"><div><h3>Inventory</h3><p>Find new and Certified Pre-Owned Tesla vehicles available immediately.</p></div><div class="actions actions--tight"><a class="button button--white" data-motion-target="magnetic-button" href="#new"><span data-motion-part="magnetic-button-label">New</span></a><a class="button button--white" data-motion-target="magnetic-button" href="#pre-owned"><span data-motion-part="magnetic-button-label">Pre-Owned</span></a></div></div><img src="assets/inventory.png" alt="Tesla inventory"></article>
+        <article class="promo-card card" data-motion-target="spotlight-hover"><div class="promo-card__content"><div><h3>Current Offers</h3><p>Explore limited-time offers on Tesla vehicles.</p></div><a class="button button--white" data-motion-target="magnetic-button" href="#offers"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div><img src="assets/offers.png" alt="Tesla vehicle offer"></article>
+        <article class="promo-card card" data-motion-target="spotlight-hover"><div class="promo-card__content"><div><h3>Inventory</h3><p>Find new and Certified Pre-Owned Tesla vehicles available immediately.</p></div><div class="actions actions--tight"><a class="button button--white" data-motion-target="magnetic-button" href="#new"><span data-motion-part="magnetic-button-label">New</span></a><a class="button button--white" data-motion-target="magnetic-button" href="#pre-owned"><span data-motion-part="magnetic-button-label">Pre-Owned</span></a></div></div><img src="assets/inventory.png" alt="Tesla inventory"></article>
       </div>
     </section>
 
@@ -71,8 +73,8 @@
     <section class="section carousel-section" id="energy" data-section="energy" data-motion="carousel">
       <div class="container carousel">
         <div class="carousel__track">
-          <article class="showcase-card"><img class="media-cover" src="assets/solar-panels.png" alt="Solar Panels"><div class="showcase-card__content"><h2>Solar Panels</h2><div><p class="lead strong">Power Your Home and Reduce Your Electricity Bil</p><div class="actions"><a class="button button--blue" data-motion-target="magnetic-button" href="#order"><span data-motion-part="magnetic-button-label">Одоо захиалах</span></a><a class="button button--white" data-motion-target="magnetic-button" href="#details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div></div></div></article>
-          <article class="showcase-card"><img class="media-cover" src="assets/powerwall.png" alt="Powerwall"><div class="showcase-card__content"><h2>Powerwall</h2><div><p class="lead strong">Keep Your Lights On During Outages</p><div class="actions"><a class="button button--blue" data-motion-target="magnetic-button" href="#order"><span data-motion-part="magnetic-button-label">Одоо захиалах</span></a><a class="button button--white" data-motion-target="magnetic-button" href="#details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div></div></div></article>
+          <article class="showcase-card" data-motion-target="spotlight-hover"><img class="media-cover" src="assets/solar-panels.png" alt="Solar Panels"><div class="showcase-card__content"><h2>Solar Panels</h2><div><p class="lead strong">Power Your Home and Reduce Your Electricity Bil</p><div class="actions"><a class="button button--blue" data-motion-target="magnetic-button" href="#order"><span data-motion-part="magnetic-button-label">Одоо захиалах</span></a><a class="button button--white" data-motion-target="magnetic-button" href="#details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div></div></div></article>
+          <article class="showcase-card" data-motion-target="spotlight-hover"><img class="media-cover" src="assets/powerwall.png" alt="Powerwall"><div class="showcase-card__content"><h2>Powerwall</h2><div><p class="lead strong">Keep Your Lights On During Outages</p><div class="actions"><a class="button button--blue" data-motion-target="magnetic-button" href="#order"><span data-motion-part="magnetic-button-label">Одоо захиалах</span></a><a class="button button--white" data-motion-target="magnetic-button" href="#details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div></div></div></article>
         </div>
         <div class="carousel__controls" aria-hidden="true"><div class="dots"><i class="active"></i><i></i></div><div class="arrows"><span><img src="assets/arrow-back.svg" alt=""></span><span><img src="assets/arrow-forward.svg" alt=""></span></div></div>
       </div>
