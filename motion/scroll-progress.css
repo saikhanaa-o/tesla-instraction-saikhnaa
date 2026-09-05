@@ -1,0 +1,15 @@
+/* Scroll Progress — fixed, non-interactive and outside document flow. */
+[data-motion-target="scroll-progress-anchor"] {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2147483647;
+  height: 3px;
+  background: #4e6cda;
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+  will-change: transform;
+  contain: strict;
+}
