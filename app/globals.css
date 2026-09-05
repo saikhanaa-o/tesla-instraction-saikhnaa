@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #171a20;
+  --color-muted: #62666d;
+  --color-surface: #f4f4f4;
+  --color-accent: #3457d5;
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+  body { background: white; color: var(--color-ink); -webkit-font-smoothing: antialiased; }
+  button, a, summary { -webkit-tap-highlight-color: transparent; }
+  button, summary { cursor: pointer; }
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 3px solid #3457d5;
+    outline-offset: 5px;
+  }
+  ::selection { background: #3457d5; color: white; }
+}
+
+@layer components {
+  .page-width { @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16; }
+  .eyebrow { @apply text-[11px] font-semibold uppercase tracking-[0.2em]; }
+  .section-title { @apply text-3xl font-medium leading-tight tracking-[-0.04em] sm:text-4xl lg:text-5xl; }
+  .action { @apply inline-flex min-h-12 items-center justify-center gap-3 rounded-md px-6 py-3 text-sm font-semibold transition duration-200 hover:-translate-y-0.5 active:translate-y-0 motion-reduce:transform-none; }
+  .action-dark { @apply bg-ink text-white hover:bg-black; }
+  .action-light { @apply bg-white text-ink hover:bg-white/90; }
+  .action-blue { @apply bg-accent text-white hover:bg-blue-700; }
+}
+
+@keyframes enter {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.enter { animation: enter 700ms ease-out both; }
+.enter-delayed { animation: enter 700ms 150ms ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

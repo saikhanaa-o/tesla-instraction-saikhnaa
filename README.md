@@ -1,29 +1,42 @@
-# Tesla static website
+# Tesla — Next.js + Tailwind CSS
 
-Figma-ийн `Home • Desktop` (`1:206`) frame-д тулгуурласан responsive static HTML/CSS implementation.
+Монгол хэлтэй, responsive Tesla танилцуулгын сайт. Next.js App Router, React, TypeScript болон Tailwind CSS v4 ашигласан.
 
 ## Ажиллуулах
 
-`index.html`-ийг browser-оор шууд нээх эсвэл дурын static server ашиглана:
+Node.js 22 буюу түүнээс шинэ хувилбар шаардлагатай.
 
 ```bash
-python -m http.server 8000
+npm install
+npm run dev
 ```
 
-Дараа нь `http://localhost:8000` руу орно.
+Хөтөч дээр http://localhost:3000 нээнэ. `index.html`-ийг шууд нээвэл хуучин статик загвар харагдана; шинэ сайт `app/page.tsx`-ээс ажиллана.
 
-## Бүтэц ба motion-д бэлэн байдал
+## Шалгах, production build
 
-- `index.html` — semantic section, navigation, cards, metrics, footer.
-- `styles.css` — design tokens, reusable button/card/carousel patterns, responsive breakpoints.
-- `assets/` — Figma-аас татсан эх зураг болон icon asset-ууд.
-- `data-section` болон `data-motion` attribute-ууд — дараагийн animation/interaction agent-ийн тогтвортой selector hook.
-- `data-motion-target` / `data-motion-part` attribute-ууд — тухайн элементэд шууд bind хийгдсэн interaction hook (жишээ нь `magnetic-button`).
+```bash
+npm run lint
+npm run typecheck
+npm run build
+npm start
+```
 
-Одоогийн хувилбар цөөн хэдэн CTA button дээр Magnetic Button, мөн card-ууд дээр Spotlight Hover interaction-той. Carousel controls нь design-ийн static дүрслэл бөгөөд interaction дараа нь тусад нь нэмэхэд зориулагдсан.
+## Бүтэц
 
-## Motion модулиуд
+- `app/page.tsx` — нүүр, жолоодлогын туршилт, танилцуулга, цэнэглэлт, эрчим хүчний хэсгүүд.
+- `app/layout.tsx` — Монгол хэл, metadata, нэг удаа ачаалах Cal.com embed.
+- `app/globals.css` — Tailwind theme, суурь хэв маяг, reduced-motion тохиргоо.
+- `components/header.tsx` — responsive navigation, гар утасны цэс.
+- `components/vehicle-showcase.tsx` — React state ашигласан автомашин сонголт; keyboard arrow, Home, End удирдлагатай tabs.
+- `components/booking-link.tsx` — давтан ашиглах Cal.com pop-up холбоос.
+- `lib/cal-embed.ts` — хэрэглэгчийн өгсөн Cal.com bootstrap.
+- `public/assets/` — Next.js-ийн ашиглах эх зургууд.
 
-- `motion/magnetic-button.js`, `motion/magnetic-button.css` — зөвхөн `[data-motion-target~="magnetic-button"]`-д тохирох button-уудад үйлчилнэ. Fine pointer cursor-ыг ойртоход товчийг ≤8px татаж, дотоод label-ийг 40%-иар нь дагуулж depth мэдрэмж үүсгэнэ; `pointerleave` үед 420–520ms spring-ээр анхны байрлалдаа буцна.
-- `motion/spotlight-hover.js`, `motion/spotlight-hover.css` — зөвхөн `[data-motion-target~="spotlight-hover"]`-д тохирох card-уудад (FSD card, vehicle/energy showcase-card, promo-card) үйлчилнэ. Идэвхтэй card дотор pointer байрлалыг normalize хийж `--spot-x`/`--spot-y` (%) болгон дамжуулж, `::after` pseudo-element дээрх 260px radial-gradient spotlight-ийг чиглүүлнэ (image card дээр 0.16, light card дээр 0.08 хамгийн их opacity). 180ms fade in / 300ms fade out, нэг дор зөвхөн нэг card идэвхтэй.
-- Хоёулаа Touch/coarse pointer болон `prefers-reduced-motion: reduce` үед бүрэн идэвхгүй, тус тусдаа тусгаарлагдсан: харгалзах `.js`/`.css` файл болон `index.html`-ийн `<link>`/`<script>` мөрийг устгахад static хуудас өөрчлөлтгүйгээр сэргэнэ (үлдэх `data-motion-target`/`data-motion-part` attribute болон label `<span>` нь visual-д нөлөөгүй).
+`index.html`, `styles.css`, `assets/`, `motion/` нь өмнөх статик хувилбарын архив бөгөөд шинэ Next.js сайтад ачаалагдахгүй. Шинэ сайт React state болон Tailwind hover/animation ашиглана. Захиалга амжилттай болсон мэт харуулдаг хуучин demo товчнуудыг цаг захиалгын холбоосоор сольсон.
+
+## Цаг захиалга
+
+Жолоодож үзэх холбоосууд `otgonsaikhan-ulziibadrakh-hzizze/webdev20` захиалгыг `webdev20` namespace-тай Cal.com modal-д нээнэ. Сарын харагдац, жижиг дэлгэцийн slots харагдац, query parameter дамжуулалт хадгалагдсан. JavaScript байхгүй эсвэл embed ачаалагдаагүй үед холбоос нь Cal.com захиалгын хуудас руу шууд очно. Бодит цаг захиалах хүсэлтийг Cal.com боловсруулна.
+
+Өмнөх загварын үнэ, санхүүжилт, цэнэглэгчийн тоо зэрэг баталгаажаагүй тоон мэдээллийг шинэ загварт ашиглаагүй. Газрын зураг нь статик тойм зураг; байршлын холбоос нь Tesla-ийн газрын зургийг нээнэ.

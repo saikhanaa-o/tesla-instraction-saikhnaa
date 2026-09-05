@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tesla</title>
+  <meta name="description" content="Tesla vehicles, charging and energy products.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="motion/magnetic-button.css">
+  <link rel="stylesheet" href="motion/spotlight-hover.css">
+  <link rel="stylesheet" href="motion/morphing-tabs.css">
+  <link rel="stylesheet" href="motion/3d-tilt-card.css">
+  <link rel="stylesheet" href="motion/seamless-button-loading.css">
+  <link rel="stylesheet" href="motion/staggered-text-reveal.css">
+  <link rel="stylesheet" href="motion/scroll-progress.css">
+  <script src="motion/magnetic-button.js" defer></script>
+  <script src="motion/spotlight-hover.js" defer></script>
+  <script src="motion/morphing-tabs.js" defer></script>
+  <script src="motion/3d-tilt-card.js" defer></script>
+  <script src="motion/seamless-button-loading.js" defer></script>
+  <script src="motion/staggered-text-reveal.js" defer></script>
+  <script src="motion/scroll-progress.js" defer></script>
+  <!-- Cal element-click embed -->
+  <script>
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "webdev20", { origin: "https://app.cal.com" });
+    Cal.config = Cal.config || {};
+    Cal.config.forwardQueryParams = true;
+    Cal.ns.webdev20("ui", { hideEventTypeDetails: false, layout: "month_view" });
+  </script>
+</head>
+<body>
+  <div class="scroll-progress" data-motion-target="scroll-progress-anchor" aria-hidden="true"></div>
+  <header class="site-header" data-motion="site-header">
+    <a class="brand" href="#top" aria-label="Tesla home"><img src="assets/logo.png" alt="Tesla"></a>
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a href="#vehicles">Vehicles</a><a href="#energy">Energy</a><a href="#charging">Charging</a><a href="#discover">Discover</a><a href="#shop">Shop</a>
+    </nav>
+    <a class="button button--blue header-cta" data-motion-target="magnetic-button" href="https://cal.com/otgonsaikhan-ulziibadrakh-hzizze/webdev20" data-cal-link="otgonsaikhan-ulziibadrakh-hzizze/webdev20" data-cal-namespace="webdev20" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' aria-haspopup="dialog"><span data-motion-part="magnetic-button-label">Жолоодож үзэх</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero" data-section="hero" data-motion="hero">
+      <img class="media-cover" src="assets/hero-model-3.png" alt="Tesla Model 3">
+      <div class="hero__content">
+        <div data-motion-target="staggered-text-reveal"><h1>Model 3</h1><p>1.99% APR Available</p></div>
+        <div class="actions"><button class="button button--blue" type="button" data-motion-target="magnetic-button seamless-button-loading" aria-label="Одоо захиалах" aria-busy="false"><span class="seamless-button__state is-active" data-loading-state="idle" aria-hidden="true"><span data-motion-part="magnetic-button-label">Одоо захиалах</span></span><span class="seamless-button__state" data-loading-state="loading" aria-hidden="true"><span class="seamless-button__spinner"></span><span>Түр хүлээнэ үү</span></span><span class="seamless-button__state" data-loading-state="success" aria-hidden="true"><span class="seamless-button__check">✓</span><span>Амжилттай</span></span></button><a class="button button--white" data-motion-target="magnetic-button" href="#details"><span data-motion-part="magnetic-button-label">Дэлгэнгүй үзэх</span></a></div>
+      </div>
+    </section>
+
+    <section class="section" id="drive" data-section="fsd">
+      <div class="container split-feature card" data-motion-target="spotlight-hover 3d-tilt-card">
+        <div class="split-feature__content" data-motion="content">
+          <div data-motion-target="staggered-text-reveal"><h2 class="heading-3">Full Self-Driving (Supervised)</h2><p class="lead">Makes every drive easier. Subscribe for $99/mo.1</p></div>
+          <dl class="metrics"><div><dt>7x</dt><dd>Fewer Collisions</dd></div><div><dt>13,534,294,722</dt><dd>Miles Driven</dd></div></dl>
+          <div class="actions"><a class="button button--black" data-motion-target="magnetic-button" href="https://cal.com/otgonsaikhan-ulziibadrakh-hzizze/webdev20" data-cal-link="otgonsaikhan-ulziibadrakh-hzizze/webdev20" data-cal-namespace="webdev20" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' aria-haspopup="dialog"><span data-motion-part="magnetic-button-label">Жолоодож үзэх цаг авах</span></a><a class="button button--white" data-motion-target="magnetic-button" href="#fsd-details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div>
+        </div>
+        <div class="split-feature__media"><img class="media-cover" src="assets/fsd.png" alt="Tesla Full Self-Driving visualization"></div>
+      </div>
+    </section>
+
+    <section class="section carousel-section" id="vehicles" data-section="vehicles" data-motion="carousel">
+      <div class="container carousel">
+        <div class="carousel__track">
+          <article class="showcase-card" data-motion-target="spotlight-hover 3d-tilt-card"><img class="media-cover" src="assets/vehicle-model-yl.png" alt="Model Y L Premium"><div class="showcase-card__content"><div><p class="tagline">Long Wheelbase Midsize SUV</p><h2>Model Y L Premium</h2></div><div><p class="lead strong">Starting at $61,990</p><div class="actions"><button class="button button--blue" type="button" data-motion-target="magnetic-button seamless-button-loading" aria-label="Одоо захиалах" aria-busy="false"><span class="seamless-button__state is-active" data-loading-state="idle" aria-hidden="true"><span data-motion-part="magnetic-button-label">Одоо захиалах</span></span><span class="seamless-button__state" data-loading-state="loading" aria-hidden="true"><span class="seamless-button__spinner"></span><span>Түр хүлээнэ үү</span></span><span class="seamless-button__state" data-loading-state="success" aria-hidden="true"><span class="seamless-button__check">✓</span><span>Амжилттай</span></span></button><a class="button button--white" data-motion-target="magnetic-button" href="#details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div></div></div></article>
+          <article class="showcase-card" data-motion-target="spotlight-hover 3d-tilt-card"><img class="media-cover" src="assets/vehicle-model-3.png" alt="Model 3"><div class="showcase-card__content"><div><p class="tagline">Sport Sedan</p><h2>Model 3</h2></div><div><p class="lead strong">Lease From $419/mo</p><div class="actions"><button class="button button--blue" type="button" data-motion-target="magnetic-button seamless-button-loading" aria-label="Одоо захиалах" aria-busy="false"><span class="seamless-button__state is-active" data-loading-state="idle" aria-hidden="true"><span data-motion-part="magnetic-button-label">Одоо захиалах</span></span><span class="seamless-button__state" data-loading-state="loading" aria-hidden="true"><span class="seamless-button__spinner"></span><span>Түр хүлээнэ үү</span></span><span class="seamless-button__state" data-loading-state="success" aria-hidden="true"><span class="seamless-button__check">✓</span><span>Амжилттай</span></span></button><a class="button button--white" data-motion-target="magnetic-button" href="#details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div></div></div></article>
+          <article class="showcase-card" data-motion-target="spotlight-hover 3d-tilt-card"><img class="media-cover" src="assets/vehicle-model-y.png" alt="Model Y"><div class="showcase-card__content"><div><p class="tagline">Midsize SUV</p><h2>Model Y</h2></div><div><p class="lead strong">Lease From $499/mo</p><div class="actions"><button class="button button--blue" type="button" data-motion-target="magnetic-button seamless-button-loading" aria-label="Одоо захиалах" aria-busy="false"><span class="seamless-button__state is-active" data-loading-state="idle" aria-hidden="true"><span data-motion-part="magnetic-button-label">Одоо захиалах</span></span><span class="seamless-button__state" data-loading-state="loading" aria-hidden="true"><span class="seamless-button__spinner"></span><span>Түр хүлээнэ үү</span></span><span class="seamless-button__state" data-loading-state="success" aria-hidden="true"><span class="seamless-button__check">✓</span><span>Амжилттай</span></span></button><a class="button button--white" data-motion-target="magnetic-button" href="#details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div></div></div></article>
+        </div>
+        <div class="carousel__controls" aria-hidden="true"><div class="dots"><i class="active"></i><i></i><i></i></div><div class="arrows"><span><img src="assets/arrow-back.svg" alt=""></span><span><img src="assets/arrow-forward.svg" alt=""></span></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="discover" data-section="offers">
+      <div class="container promo-grid">
+        <article class="promo-card card" data-motion-target="spotlight-hover 3d-tilt-card"><div class="promo-card__content"><div data-motion-target="staggered-text-reveal"><h3>Current Offers</h3><p>Explore limited-time offers on Tesla vehicles.</p></div><a class="button button--white" data-motion-target="magnetic-button" href="#offers"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div><img src="assets/offers.png" alt="Tesla vehicle offer"></article>
+        <article class="promo-card card" data-motion-target="spotlight-hover 3d-tilt-card"><div class="promo-card__content"><div data-motion-target="staggered-text-reveal"><h3>Inventory</h3><p>Find new and Certified Pre-Owned Tesla vehicles available immediately.</p></div><div class="morphing-tabs" data-motion-target="morphing-tabs-shared-layout" role="tablist" aria-label="Inventory type"><span class="morphing-tabs__indicator" data-motion-part="active-pill" aria-hidden="true"></span><button class="morphing-tabs__tab" type="button" role="tab" aria-selected="true" tabindex="0"><span class="morphing-tabs__label">New</span><span class="morphing-tabs__label morphing-tabs__label--emphasis" aria-hidden="true">New</span></button><button class="morphing-tabs__tab" type="button" role="tab" aria-selected="false" tabindex="-1"><span class="morphing-tabs__label">Pre-Owned</span><span class="morphing-tabs__label morphing-tabs__label--emphasis" aria-hidden="true">Pre-Owned</span></button></div></div><img src="assets/inventory.png" alt="Tesla inventory"></article>
+      </div>
+    </section>
+
+    <section class="section map-section" id="charging" data-section="charging-map"><div class="container map-frame"><img class="media-cover" src="assets/charging-map.png" alt="Tesla charging network map"></div></section>
+
+    <section class="section stats-section" data-section="charging-stats">
+      <div class="container stats-layout">
+        <div class="stats-copy"><div data-motion-target="staggered-text-reveal"><h2>Find Your Charge</h2><p class="lead">View the network of Tesla Superchargers and Destination Chargers available near you.</p></div><div class="actions"><a class="button button--black" data-motion-target="magnetic-button" href="#network"><span data-motion-part="magnetic-button-label">View Network</span></a><a class="button button--white" data-motion-target="magnetic-button" href="#charge-details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div></div>
+        <dl class="charge-stats"><div><div class="charge-stat__top"><dt>38,490</dt><img src="assets/bolt-supercharger.png" alt="" width="56" height="56"></div><dd>Superchargers</dd></div><div><div class="charge-stat__top"><dt>410</dt><img src="assets/bolt-destination.png" alt="" width="56" height="56"></div><dd>Destination Chargers</dd></div></dl>
+      </div>
+    </section>
+
+    <section class="section carousel-section" id="energy" data-section="energy" data-motion="carousel">
+      <div class="container carousel">
+        <div class="carousel__track">
+          <article class="showcase-card" data-motion-target="spotlight-hover 3d-tilt-card"><img class="media-cover" src="assets/solar-panels.png" alt="Solar Panels"><div class="showcase-card__content"><h2>Solar Panels</h2><div><p class="lead strong">Power Your Home and Reduce Your Electricity Bil</p><div class="actions"><button class="button button--blue" type="button" data-motion-target="magnetic-button seamless-button-loading" aria-label="Одоо захиалах" aria-busy="false"><span class="seamless-button__state is-active" data-loading-state="idle" aria-hidden="true"><span data-motion-part="magnetic-button-label">Одоо захиалах</span></span><span class="seamless-button__state" data-loading-state="loading" aria-hidden="true"><span class="seamless-button__spinner"></span><span>Түр хүлээнэ үү</span></span><span class="seamless-button__state" data-loading-state="success" aria-hidden="true"><span class="seamless-button__check">✓</span><span>Амжилттай</span></span></button><a class="button button--white" data-motion-target="magnetic-button" href="#details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div></div></div></article>
+          <article class="showcase-card" data-motion-target="spotlight-hover 3d-tilt-card"><img class="media-cover" src="assets/powerwall.png" alt="Powerwall"><div class="showcase-card__content"><h2>Powerwall</h2><div><p class="lead strong">Keep Your Lights On During Outages</p><div class="actions"><button class="button button--blue" type="button" data-motion-target="magnetic-button seamless-button-loading" aria-label="Одоо захиалах" aria-busy="false"><span class="seamless-button__state is-active" data-loading-state="idle" aria-hidden="true"><span data-motion-part="magnetic-button-label">Одоо захиалах</span></span><span class="seamless-button__state" data-loading-state="loading" aria-hidden="true"><span class="seamless-button__spinner"></span><span>Түр хүлээнэ үү</span></span><span class="seamless-button__state" data-loading-state="success" aria-hidden="true"><span class="seamless-button__check">✓</span><span>Амжилттай</span></span></button><a class="button button--white" data-motion-target="magnetic-button" href="#details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div></div></div></article>
+        </div>
+        <div class="carousel__controls" aria-hidden="true"><div class="dots"><i class="active"></i><i></i></div><div class="arrows"><span><img src="assets/arrow-back.svg" alt=""></span><span><img src="assets/arrow-forward.svg" alt=""></span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-links"><span>Tesla © 2026</span><a href="#privacy">Privacy policy</a><a href="#recalls">Vehicle Recalls</a><a href="#contacts">Contacts</a><a href="#news">News</a><a href="#updates">Get Updates</a><a href="#locations">Locations</a><a href="#learn">Learn</a></div></footer>
+  <div class="seamless-loading-live" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
