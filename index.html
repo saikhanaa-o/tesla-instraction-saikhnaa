@@ -23,6 +23,39 @@
   <script src="motion/seamless-button-loading.js" defer></script>
   <script src="motion/staggered-text-reveal.js" defer></script>
   <script src="motion/scroll-progress.js" defer></script>
+  <!-- Cal element-click embed -->
+  <script>
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "webdev20", { origin: "https://app.cal.com" });
+    Cal.config = Cal.config || {};
+    Cal.config.forwardQueryParams = true;
+    Cal.ns.webdev20("ui", { hideEventTypeDetails: false, layout: "month_view" });
+  </script>
 </head>
 <body>
   <div class="scroll-progress" data-motion-target="scroll-progress-anchor" aria-hidden="true"></div>
@@ -31,7 +64,7 @@
     <nav class="primary-nav" aria-label="Primary navigation">
       <a href="#vehicles">Vehicles</a><a href="#energy">Energy</a><a href="#charging">Charging</a><a href="#discover">Discover</a><a href="#shop">Shop</a>
     </nav>
-    <a class="button button--blue header-cta" data-motion-target="magnetic-button" href="#drive"><span data-motion-part="magnetic-button-label">Жолоодож үзэх</span></a>
+    <a class="button button--blue header-cta" data-motion-target="magnetic-button" href="https://cal.com/otgonsaikhan-ulziibadrakh-hzizze/webdev20" data-cal-link="otgonsaikhan-ulziibadrakh-hzizze/webdev20" data-cal-namespace="webdev20" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' aria-haspopup="dialog"><span data-motion-part="magnetic-button-label">Жолоодож үзэх</span></a>
   </header>
 
   <main id="top">
@@ -48,7 +81,7 @@
         <div class="split-feature__content" data-motion="content">
           <div data-motion-target="staggered-text-reveal"><h2 class="heading-3">Full Self-Driving (Supervised)</h2><p class="lead">Makes every drive easier. Subscribe for $99/mo.1</p></div>
           <dl class="metrics"><div><dt>7x</dt><dd>Fewer Collisions</dd></div><div><dt>13,534,294,722</dt><dd>Miles Driven</dd></div></dl>
-          <div class="actions"><a class="button button--black" data-motion-target="magnetic-button" href="#test-drive"><span data-motion-part="magnetic-button-label">Жолоодож үзэх цаг авах</span></a><a class="button button--white" data-motion-target="magnetic-button" href="#fsd-details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div>
+          <div class="actions"><a class="button button--black" data-motion-target="magnetic-button" href="https://cal.com/otgonsaikhan-ulziibadrakh-hzizze/webdev20" data-cal-link="otgonsaikhan-ulziibadrakh-hzizze/webdev20" data-cal-namespace="webdev20" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' aria-haspopup="dialog"><span data-motion-part="magnetic-button-label">Жолоодож үзэх цаг авах</span></a><a class="button button--white" data-motion-target="magnetic-button" href="#fsd-details"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div>
         </div>
         <div class="split-feature__media"><img class="media-cover" src="assets/fsd.png" alt="Tesla Full Self-Driving visualization"></div>
       </div>
