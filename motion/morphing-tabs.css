@@ -1,0 +1,71 @@
+/* Inventory Morphing Tabs — isolated shared-layout motion layer. */
+[data-motion-target~="morphing-tabs-shared-layout"] {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  isolation: isolate;
+}
+
+[data-motion-target~="morphing-tabs-shared-layout"] [data-motion-part="active-pill"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 1px;
+  height: 44px;
+  border-radius: 6px;
+  background: var(--white);
+  transform-origin: left top;
+  pointer-events: none;
+  will-change: transform;
+}
+
+[data-motion-target~="morphing-tabs-shared-layout"] .morphing-tabs__tab {
+  position: relative;
+  z-index: 1;
+  min-height: 44px;
+  padding: 10px 24px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--ink);
+  background: transparent;
+  font: inherit;
+  font-weight: 500;
+  line-height: 1.5;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+[data-motion-target~="morphing-tabs-shared-layout"] .morphing-tabs__tab:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+
+[data-motion-target~="morphing-tabs-shared-layout"] .morphing-tabs__label {
+  display: block;
+  opacity: 1;
+  transition: opacity 160ms ease;
+}
+
+[data-motion-target~="morphing-tabs-shared-layout"] .morphing-tabs__label--emphasis {
+  position: absolute;
+  inset: 10px 24px;
+  font-weight: 600;
+  opacity: 0;
+}
+
+[data-motion-target~="morphing-tabs-shared-layout"] .morphing-tabs__tab[aria-selected="true"] > .morphing-tabs__label:not(.morphing-tabs__label--emphasis) {
+  opacity: 0;
+}
+
+[data-motion-target~="morphing-tabs-shared-layout"] .morphing-tabs__tab[aria-selected="true"] > .morphing-tabs__label--emphasis {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-motion-target~="morphing-tabs-shared-layout"] [data-motion-part="active-pill"],
+  [data-motion-target~="morphing-tabs-shared-layout"] .morphing-tabs__label {
+    transition: none !important;
+  }
+}

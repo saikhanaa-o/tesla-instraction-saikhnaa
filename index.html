@@ -11,8 +11,10 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="motion/magnetic-button.css">
   <link rel="stylesheet" href="motion/spotlight-hover.css">
+  <link rel="stylesheet" href="motion/morphing-tabs.css">
   <script src="motion/magnetic-button.js" defer></script>
   <script src="motion/spotlight-hover.js" defer></script>
+  <script src="motion/morphing-tabs.js" defer></script>
 </head>
 <body>
   <header class="site-header" data-motion="site-header">
@@ -57,7 +59,7 @@
     <section class="section" id="discover" data-section="offers">
       <div class="container promo-grid">
         <article class="promo-card card" data-motion-target="spotlight-hover"><div class="promo-card__content"><div><h3>Current Offers</h3><p>Explore limited-time offers on Tesla vehicles.</p></div><a class="button button--white" data-motion-target="magnetic-button" href="#offers"><span data-motion-part="magnetic-button-label">Дэлгэрэнгүй</span></a></div><img src="assets/offers.png" alt="Tesla vehicle offer"></article>
-        <article class="promo-card card" data-motion-target="spotlight-hover"><div class="promo-card__content"><div><h3>Inventory</h3><p>Find new and Certified Pre-Owned Tesla vehicles available immediately.</p></div><div class="actions actions--tight"><a class="button button--white" data-motion-target="magnetic-button" href="#new"><span data-motion-part="magnetic-button-label">New</span></a><a class="button button--white" data-motion-target="magnetic-button" href="#pre-owned"><span data-motion-part="magnetic-button-label">Pre-Owned</span></a></div></div><img src="assets/inventory.png" alt="Tesla inventory"></article>
+        <article class="promo-card card" data-motion-target="spotlight-hover"><div class="promo-card__content"><div><h3>Inventory</h3><p>Find new and Certified Pre-Owned Tesla vehicles available immediately.</p></div><div class="morphing-tabs" data-motion-target="morphing-tabs-shared-layout" role="tablist" aria-label="Inventory type"><span class="morphing-tabs__indicator" data-motion-part="active-pill" aria-hidden="true"></span><button class="morphing-tabs__tab" type="button" role="tab" aria-selected="true" tabindex="0"><span class="morphing-tabs__label">New</span><span class="morphing-tabs__label morphing-tabs__label--emphasis" aria-hidden="true">New</span></button><button class="morphing-tabs__tab" type="button" role="tab" aria-selected="false" tabindex="-1"><span class="morphing-tabs__label">Pre-Owned</span><span class="morphing-tabs__label morphing-tabs__label--emphasis" aria-hidden="true">Pre-Owned</span></button></div></div><img src="assets/inventory.png" alt="Tesla inventory"></article>
       </div>
     </section>
 
