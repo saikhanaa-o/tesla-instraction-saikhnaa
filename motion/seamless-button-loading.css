@@ -1,0 +1,85 @@
+/* Seamless Button Loading — scoped, layout-stable state presentation. */
+[data-motion-target~="seamless-button-loading"] {
+  position: relative;
+  overflow: hidden;
+  font: inherit;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+[data-motion-target~="seamless-button-loading"]:disabled {
+  color: var(--white);
+  opacity: 1;
+  cursor: wait;
+}
+
+[data-motion-target~="seamless-button-loading"]:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px var(--blue);
+}
+
+.seamless-button__state {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 220ms ease, transform 220ms cubic-bezier(.22, 1, .36, 1);
+  pointer-events: none;
+}
+
+.seamless-button__state:not([data-loading-state="idle"]) {
+  position: absolute;
+  inset: 0;
+}
+
+.seamless-button__state.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.seamless-button__state.is-before {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+.seamless-button__spinner {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  border: 2px solid rgba(255, 255, 255, .38);
+  border-top-color: var(--white);
+  border-radius: 50%;
+  animation: seamless-button-spin 700ms linear infinite;
+}
+
+.seamless-button__check {
+  font-size: 17px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.seamless-loading-live {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes seamless-button-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seamless-button__state { transition: none !important; }
+  .seamless-button__spinner { animation: none !important; }
+}
