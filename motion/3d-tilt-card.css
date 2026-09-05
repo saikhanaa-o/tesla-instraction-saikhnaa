@@ -1,0 +1,33 @@
+/* 3D Tilt Card — completely inert until JS adds the active class. */
+.has-3d-tilt-card {
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+}
+
+[data-motion-target~="3d-tilt-card"].is-3d-tilting {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, box-shadow;
+}
+
+[data-motion-target~="3d-tilt-card"].is-3d-tilting > .media-cover,
+[data-motion-target~="3d-tilt-card"].is-3d-tilting > img,
+[data-motion-target~="3d-tilt-card"].is-3d-tilting .split-feature__media > .media-cover {
+  transform: translateZ(var(--tilt-image-z, 0px)) scale(var(--tilt-image-scale, 1));
+  transform-origin: center;
+  will-change: transform;
+}
+
+[data-motion-target~="3d-tilt-card"].is-3d-tilting > .showcase-card__content,
+[data-motion-target~="3d-tilt-card"].is-3d-tilting > .promo-card__content,
+[data-motion-target~="3d-tilt-card"].is-3d-tilting > .split-feature__content {
+  transform: translateZ(var(--tilt-content-z, 0px));
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  [data-motion-target~="3d-tilt-card"] {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
