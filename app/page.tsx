@@ -3,6 +3,7 @@ import { Arrow } from "@/components/arrow";
 import { BookingLink } from "@/components/booking-link";
 import { Header } from "@/components/header";
 import { VehicleShowcase } from "@/components/vehicle-showcase";
+import { ContactSection } from "@/components/contact-section";
 
 export default function Home() {
   return (
@@ -77,8 +78,9 @@ export default function Home() {
         </section>
 
         <section className="bg-surface px-5 py-20 text-center lg:py-24" aria-labelledby="booking-heading"><p className="eyebrow mb-4 text-muted">Таны цахилгаан аялал эндээс</p><h2 id="booking-heading" className="section-title">Унших нэг хэрэг.<br />Жолоодож үзэх өөр.</h2><p className="mx-auto mt-5 max-w-md text-sm leading-7 text-muted">Өөрт тохирох өдрөө сонгоод Tesla-тай танилцах эхний алхмаа хийгээрэй.</p><BookingLink className="action action-dark mt-8 w-full sm:w-auto">Жолоодож үзэх цаг авах <Arrow /></BookingLink></section>
+        <ContactSection />
       </main>
-      <footer className="page-width py-10"><div className="flex flex-col items-start justify-between gap-7 border-b border-black/10 pb-8 sm:flex-row sm:items-center"><a href="#top" aria-label="Нүүр рүү буцах"><Image src="/assets/logo.png" alt="Tesla" width={108} height={14} className="h-auto" /></a><nav aria-label="Доод цэс" className="flex flex-wrap gap-x-6 gap-y-4 text-xs text-muted"><a href="#vehicles" className="hover:text-ink">Автомашин</a><a href="#charging" className="hover:text-ink">Цэнэглэлт</a><a href="#energy" className="hover:text-ink">Эрчим хүч</a><BookingLink className="hover:text-ink">Цаг захиалах</BookingLink></nav></div><div className="mt-6 flex flex-col justify-between gap-3 text-[11px] text-muted sm:flex-row"><span>Tesla © 2026</span><span>Цахилгаан ирээдүйг хамтдаа.</span></div></footer>
+      <footer className="page-width py-10"><div className="flex flex-col items-start justify-between gap-7 border-b border-black/10 pb-8 sm:flex-row sm:items-center"><a href="#top" aria-label="Нүүр рүү буцах"><Image src="/assets/logo.png" alt="Tesla" width={108} height={14} className="h-auto" /></a><nav aria-label="Доод цэс" className="flex flex-wrap gap-x-6 gap-y-4 text-xs text-muted"><a href="#vehicles" className="hover:text-ink">Автомашин</a><a href="#charging" className="hover:text-ink">Цэнэглэлт</a><a href="#energy" className="hover:text-ink">Эрчим хүч</a><a href="#contact" className="hover:text-ink">Холбоо барих</a><BookingLink className="hover:text-ink">Цаг захиалах</BookingLink></nav></div><div className="mt-6 flex flex-col justify-between gap-3 text-[11px] text-muted sm:flex-row"><span>Tesla © 2026</span><span>Цахилгаан ирээдүйг хамтдаа.</span></div></footer>
     </div>
   );
 }
